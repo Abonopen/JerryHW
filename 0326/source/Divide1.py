@@ -1,0 +1,9 @@
+
+# coding: utf-8
+
+# In[ ]:
+
+
+def divide(arg1,arg2):
+    return arg1/arg2
+
