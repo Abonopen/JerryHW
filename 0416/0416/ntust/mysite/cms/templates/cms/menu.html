@@ -1,0 +1,27 @@
+<h1>書店</h1>
+{% for r in bookshop %}
+<h2>{{ r.name }}</h2>
+{% if r.books_set.all %}
+<p>本書店共有{{ r.books_set.all|length }}本書</p>
+<table class='table'>
+	<tr>
+		<th>書名</th>
+		<th>價格</th>
+		<th>編輯</th>
+		<th>語言</th>
+		<th>是否為二手</th>
+	</tr>
+	{% for books in r.books_set.all %}
+	<tr>
+		<td>{{ books.name }}</td>
+		<td>{{ books.price }}</td>
+		<td>{{ books.editor }}</td>
+		<td>{{ books.language }}</td>>
+		<td>{% if books.is.second.hand %} 是二手 {% else %} 不是二手 {% endif %}</td>
+	</tr>
+	{% endfor %}
+</table>s
+	{% else %}
+	<p>書店沒有書</p>
+	{% endif %}
+	{% endfor %}
