@@ -1,0 +1,15 @@
+<html>
+	<h5>BLOG<h5>
+	<body>
+		<form action="" method="post">
+			{% csrf_token %}
+			Author:<br>
+			<input type="text" name="auther"><br>
+			Title:<br>
+			<input type="text" name="title"><br>
+			Content:<br>
+			<textarea name="message" row="10" cols="30"></textarea>><br>
+			<input type="submit" value="Post">
+		</form>
+	</body>
+</html>
