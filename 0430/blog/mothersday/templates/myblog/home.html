@@ -1,22 +1,24 @@
 <html>
 	<title>BLOG</title>
-	<body>
-		<a href="{%url  'message_create'  %}">New Post</a>
+	<body style="background-color: pink ">
+		<small><a href="{%url  'message_create'  %}">New Post</a></small>
 
 		{% for m in message %}
 		<div>
 			<p> Author:{{m.auther}} <br>
-				Title:{{m.title}}  <br>
-				{{m.content}} <br>
-				{{m.date}} <br>
+				Title:{{m.title}} <br>
+				Content:<br>
+				{{m.content}}<br> 
+				{{m.date}}<br>
 				<form action='/update/' method='get'>
 					<input type="hidden" value="{{m.id}}" name="m_id">
 					<input type="submit" value="Update">
-				</form>				
-				<form action='/delete/' method='get'>
-					<input type="hidden" value="{{m.id}}" name="d_id">
+				</form>
+				<form action='delete' method='get'>
+					<input type="hidden" value="{{m.pk}}" name="d_id">
 					<input type="submit" value="Delete">
 				</form>
+				
 			</p>
 
 		</div>

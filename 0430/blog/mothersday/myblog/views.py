@@ -40,8 +40,7 @@ def update(request):
 		return render(request, "myblog/home.html", locals())
 
 def delete(request):
-	message_id = request.GET.get("d_id","")
-	if request.method == 'GET':
-		d = Message.objects.get(pk=message_id)
-		d.delete()
+	post = Message.objects.get(pk=request.GET["d_id"])
+	post.delete()
 	return redirect('/home')
+

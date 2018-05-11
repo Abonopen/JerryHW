@@ -3,13 +3,12 @@
 		<h1>UPDATE</h1>
 		<form action="" method="post">
 			{% csrf_token %}
-			Message ID : <br>
 			Auther:{{auther}}<br>
 			<input type="text" name="auther" value="{{o.auther}}"><br>
 			Title:<br>
 			<input type="text" name="title" value="{{o.title}}"><br>
 			Content:<br>
-			<textarea name="message" row="10" cols="30" value="{{o.content}}"></textarea>><br>
+			<textarea name="message" row="10" cols="30">{{o.content}}</textarea>><br>
 			<input type="submit" value="Post">			
 		</form>
 	</body>
